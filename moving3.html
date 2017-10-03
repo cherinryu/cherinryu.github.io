@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>movingAnimation3</title>
+    <style>
+          body {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            font-family: kai;
+            font-size: 15pt;
+            background-color: snow;
+            color: black;
+          }
+        .train {
+        display: block;
+        width: 250px;
+        height: 250px;
+        background-image: <img src="photos/hoboken.jpg">
+        background-repeat: no-repeat;
+        overflow:hidden;
+        text-indent:100%;
+        white-space: nowrap;
+        }
+    .train:hover {
+        background-position: -240px -50px;
+        }
+        
+    .train:active {
+        background-position: -650px -70px;
+        }
+        
+    .train-thumbnail {
+        margin: 50px;
+        width: 200px;
+        border: 1px solid gray;
+    }
+    <h4>...with fancy positioning</h4>
+    <div class="train"></div>
+    <img class="train-thumbnail" src="http://thedrawpage.com/wp-content/uploads/2013/10/BlogTrain.jpg">
+    </style>
+    </head>
+</html>
