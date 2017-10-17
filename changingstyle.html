@@ -1,0 +1,137 @@
+<html>
+<head>
+  <title>changing style demo</title>
+  <style>
+  body {
+    text-align: center;
+    font-family: kai;
+    font-size: 15pt;
+    background-color:Snow;
+    color: Black;
+  }
+  div {
+    margin: 5px;
+    float: left;
+  }
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+  #heart1:before,
+  #heart1:after {
+     background: red;
+  }
+  #heart2:before,
+  #heart2:after {
+     background: orange;
+  }
+  #heart3:before,
+  #heart3:after {
+     background: yellow;
+  }
+  #heart4:before,
+  #heart4:after {
+     background: green;
+  }
+  #heart5:before,
+  #heart5:after {
+     background: blue;
+  }
+  #heart6:before,
+  #heart6:after {
+     background: purple;
+  }
+  .heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+  .example1, .example2, .example3 {
+     width: 100%; 
+     margin-bottom: 40px;
+  }
+  .rounded {
+    border-radius: 60px;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+ 
+  <h3>Example 1</h3>
+  <div class="example1">
+    <span id="result">&nbsp;</span>
+    <div class="heart" id="heart1" style='background: red'></div>
+    <div class="heart" id="heart2"></div>
+    <div class="heart" id="heart3"></div>
+    <div class="heart" id="heart4"></div>
+  </div>
+
+  <h3>Example 2</h3>
+  <div class="heart" id="heart5"></div><br>
+
+  <h3>Example 3</h3> 
+  <div class="heart" id="heart6"></div>
+   
+  <script>
+  /* global $ */
+  
+  // Example one: get color of box on mouse click
+  $( ".example1 div" ).click(function() {
+    var color = $( this ).css( "background-color" );
+    $( "#result" ).html( "The color of this square is <span style='color:" +
+      color + ";'>" + color + "</span>." );
+  });
+  
+  // Example two: set color of box to random on mouseover
+  $( "#heart1" ).mouseover(function() {
+    $( this ).addClass('randomColor');
+  });
+  
+  function getRandomColor () {
+    // this function returns a string with format "rgb(000,000,000)" where 000 is an integer between 0 and 255
+    var random0to255 = function() {
+      return Math.floor(Math.random()*255);
+    }
+    return "rgb(" + random0to255() + "," + random0to255() + "," + random0to255() + ")";
+  }
+  
+  // Example three: add/remove a class to change style of div
+  $( ".example3 div" ).mouseover(function() {
+    $( this ).toggleClass( "rounded" );
+  });
+  </script>
+   
+</body>
+</html>

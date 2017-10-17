@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>changing elements demo</title>
+  <style>
+      body {
+    text-align: center;
+    font-family: kai;
+    font-size: 15pt;
+    background-color:Snow;
+    color: Black;
+  }
+  div {
+    margin: 5px;
+    float: left;
+  }
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+  #heart1:before,
+  #heart1:after {
+     background: red;
+  }
+  #heart2:before,
+  #heart2:after {
+     background: orange;
+  }
+  #heart3:before,
+  #heart3:after {
+     background: yellow;
+  }
+  #heart4:before,
+  #heart4:after {
+     background: green;
+  }
+  #heart5:before,
+  #heart5:after {
+     background: blue;
+  }
+  #heart6:before,
+  #heart6:after {
+     background: purple;
+  }
+  .heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+  .example1, .example2, .example3 {
+     width: 100%; 
+     margin-bottom: 40px;
+  }
+  img {
+    width: 60px;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+ 
+  <h3>Mouseover for hearts to disappear</h3>
+  <div class="example1">
+    <div class="heart" id="heart1"></div>
+    <div class="heart" id="heart1"></div>
+    <div class="heart" id="heart1"></div>
+    <div class="heart" id="heart1"></div>
+  </div>
+
+  <h3>Click the word</h3>
+  <div class="example2">
+    <div style="width: 500px">Hearts</div>
+  </div>
+   
+
+  <script>
+  /* global $ */
+  
+  // Example one: disappear boxes on mouseover
+  $( ".example1 div" ).mouseover(function() {
+    $( this ).hide();
+  });
+  
+  // Example two: change text inside box on click
+  $( ".example2 div" ).click(function() {
+    $( this ).html( "soda" );
+  });
+  
+  // Example three: prepend on click
+  $( ".example3 div" ).click(function() {
+    $( this ).prepend( "<img src='http://icons.iconarchive.com/icons/sonya/swarm/128/Pizza-icon.png'>" );
+  });
+  </script>
+   
+</body>
+</html>
