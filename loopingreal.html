@@ -1,0 +1,28 @@
+<html>
+<body>
+<style>
+	body {
+    /*display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;*/
+    text-align: center;
+    font-family: kai;
+    font-size: 15pt;
+    background-color: #41a949;
+    }
+</style>
+<h2>Looping Infinite Numbers - Keep Scrolling</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10000; i++) {
+    text += "This is number: " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>
