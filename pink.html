@@ -1,0 +1,51 @@
+<html>
+    <div class="duotone">
+    <h1>CHERINRYU</h1>
+    </div>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+.duotone {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1447016840061-c336a1f84ec5);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.duotone::after, .duotone::before {
+  width: 100%;
+  height: 100%;  
+  content: '';
+  position: absolute;
+}
+
+.duotone::before {
+  background-color: red;
+  mix-blend-mode: darken;
+}
+
+
+.duotone::after {
+  background-color: blue;
+  mix-blend-mode: lighten;
+}
+
+.duotone h1 {
+  color: white;
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 5.5vw;
+  letter-spacing: 1em;
+  text-align: center;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+    </style>
+</html>
