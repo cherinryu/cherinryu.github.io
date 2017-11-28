@@ -1,0 +1,62 @@
+
+<html class=''>
+<head>
+<style>
+body {
+  background-color:black;
+  overflow: hidden;
+  text-align:center;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+svg{
+  width:800px;
+  height:100%;
+}
+#myText{
+  text-anchor: start;
+fill: hotpink;
+font-family: helvetica;
+font-weight: 100;
+letter-spacing: -0.2;
+font-size: 13px;
+
+}</style></head><body>
+<svg viewBox="0 0 495 272" xmlns="http://www.w3.org/2000/svg">
+<defs>
+</defs>
+    <text x="10" y="140" id="myText" ></text> 
+</svg>
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script><script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/TextPlugin.min.js'></script>
+<script >const messageBodyStr = 'Cherin is a sophomore communication design student at Parsons School of Design.';
+const speed = 7;
+const endFlashSpeed = 0.3;
+const character = "|";  
+
+let typingTl = new TimelineMax();
+typingTl.to('#myText', messageBodyStr.length/speed, {
+      text:messageBodyStr,
+      ease:Linear.easeNone,
+      onUpdate:function(){
+        this.target[0].textContent += character
+      },
+      onComplete:function(){
+        this.target[0].textContent = messageBodyStr
+      }
+ },'+=0.5')
+ //makes it flash at the end
+.to('#myText',endFlashSpeed, {
+      text:messageBodyStr + character,
+      repeat:-1,
+      repeatDelay:endFlashSpeed,
+      ease:Linear.easeNone
+ })
+
+</script>
+</body></html>
